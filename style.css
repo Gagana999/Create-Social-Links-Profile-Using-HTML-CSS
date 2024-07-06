@@ -1,4 +1,16 @@
+:root{
+     --clr-accent-green: hsl(75, 94%, 57%);
+     --clr-white: hsl(0, 0%, 100%);
+     --clr-grey: hsl(0, 0%, 20%);
+     --clr-dark-gray: hsl(0, 0%, 12%);
+     --clr-black: hsl(0, 0%, 8%);
 
+     --ff-base: 'Inter', sans-serif;
+
+     --fw-light: 400;
+     --fw-regular: 600;
+     --fw-bold: 700;
+}
 
 /* ---------------------------------CSS RESET--------------------------------- */
 
@@ -47,4 +59,94 @@ p, h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
      isolation: isolate;
+}
+
+
+/* Cutsome CSS */
+
+body{
+     color: var(--clr-white);
+     background-color: var(--clr-black);
+     font-family: var(--ff-base);
+}
+.wrapper{
+     width: 100%;
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.social-links-card{
+     --padding: 2rem;
+     width: 25rem;
+     background-color: var(--clr-dark-gray);
+     padding: var(--padding);
+     border-radius: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+.social-links-card img{
+     border-radius: 100%;
+     width: 5rem;
+     margin-block: 2rem;
+}
+.name{
+     font-weight: var(--fw-regular);
+     font-size: 1.6rem;
+}
+.loaction{
+     color: var(--clr-accent-green);
+     font-size: 0.875rem;
+     font-weight: var(--fw-bold);
+}
+.description{
+     font-size: 0.875rem;
+     font-weight: var(--fw-light);
+     padding: var(--padding);
+     text-align: center;
+}
+ul{
+     width: 100%;
+     padding: 0;
+}
+
+ul li a{
+     text-decoration: none;
+     color: var(--clr-white);
+     font-size: 0.875rem;
+     font-weight: var(--fw-bold);
+     text-align: center;
+     transition: color 0.7s linear;
+}
+
+ul li{
+     text-align: center;
+     width: 90%;
+     list-style: none;
+     text-decoration: none;
+     background-color: var(--clr-grey);
+     padding: 0.675rem 2rem;
+     margin: 1rem;
+     border-radius: 0.575rem;
+     cursor: pointer;
+     transition: background 0.7s linear;
+}
+
+ul li:is(:hover, :active){
+     background-color: var(--clr-accent-green);
+}
+ul li:is(:hover, :active) a{
+     color: var(--clr-black);
+}
+
+@media(max-width: 420px){
+     .social-links-card{
+          --padding: 0.675rem;
+          margin: 1rem;
+     }
+     ul li{
+          padding: 0.975rem 2rem;
+     }
 }
